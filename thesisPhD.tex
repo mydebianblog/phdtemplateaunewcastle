@@ -1,0 +1,117 @@
+% \documentclass[a4paper,11pt,phdthesis,twoside,oneandhalfspace]{cssethesis}  %% <-- if you want to use old-school dvips
+\documentclass[a4paper,11pt,phdthesis,twoside,oneandhalfspace,pdflatex]{cssethesis} %% <--- if youto use PDFLaTeX
+
+% * Include the option "pdflatex" above if you want to use pdflatex rather than dvips
+% * Include the option "oneside" if you don't want formatting for two-sided  printing.
+% * include ::
+%                 = singlespace}{\AtBeginDocument{\singlespacing}}
+%                 = oneandhalfspace}{\AtBeginDocument{\onehalfspacing}}
+%                 = doublespace}{\AtBeginDocument{\doublespacing}}
+% * Include the option "litreview" above if this is a literature review.
+% * Include the option "nocoursecode" so that the numerical course code is suppressed after the course name.
+% * Include option "thesisdraft" to get a timestamp and "Draft" message in   the footer
+% * Include option "thesispsdraft" to get a timestamp and "Draft" message in
+%   the footer, along with a grey "DRAFT" in the margin. Note: this only
+%   works with latex, not pdflatex
+
+
+\usepackage[T2A]{fontenc} 
+\usepackage[british]{babel}
+
+\thesisauthor{\Large John Doe}
+\thesisauthorlastname{Doe}
+% \thesisauthorpreviousdegrees{Dipl. Eng.} % Optional
+\thesisdepartment{\bfseries School of Electrical Engineering \\ and Computer Science} % Optional.
+
+\thesismonth{August} % Optional. Current month is used if this is not set
+\thesisyear{2013} % Optional. Current year is used if this is not set
+
+\thesistitle{On the development of a very important stuff}
+\thesissupervisor{Prof. Woo Hoo}
+
+\usepackage{amssymb,amsfonts,geometry,cite,enumerate,float}
+\usepackage{ifpdf}
+
+\graphicspath{{images/}}  %% <-- where you store all your images. 
+
+\usepackage{lipsum} %%% to generate a stub text
+
+\usepackage{setspace} %%% for additional spacing 
+\onehalfspacing %%% <- Increase spacing for the proofread
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Front matter 
+%%
+\frontmatter					% start the thesis front matter.
+
+\thesistitlepage				% Generate the title page.
+
+\thesiscopyrightpage			% Generate the copyright page.
+
+\thesisdeclarationpage			% generate the declaration page (optional).
+
+\include{thesis_acknowledgments}
+
+\tableofcontents				% Generate a table of contents.
+
+% \listoftables					% Generate a list of tables (optional).
+% \listoffigures					% Generate a list of figures (optional).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\include{thesis_abstract}
+
+%%%%%%%%%%%%%%%%%%  START::: List of Publicaitons %%%%%%%%%%%%
+\include{thesis_publications}
+%%%%%%%%%%%%%%%%%% ## END::: List of Publicaitons %%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Main matter 
+%%
+\mainmatter	% start the thesis body.
+
+
+
+%%%%%%%%%%%%%%%%%%%  START::: Introduction  %%%%%%%%%%%%
+\chapter{Overview}
+\lipsum[1-5]
+
+
+
+\chapter{Introduction}
+\lipsum[6-14]
+
+
+\begin{figure}[ht!]
+\centering\includegraphics[width=0.5\linewidth]{newcastleLogo}
+\caption{Principle of the Shack-Hartmann wavefront sensor.}
+\label{fig:ShackHartmannWFS}
+\end{figure}
+
+
+
+\chapter{Conclusions and Future work}\label{chap:summary}
+\lipsum[16-24]
+
+
+\backmatter % start the thesis back matter
+
+\pagestyle{plain}
+
+\bibliographystyle{unsrt} 
+\bibliography{biblio/my}  %%% this is a link to the Bibliography files
+\end{document}
