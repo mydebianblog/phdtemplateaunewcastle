@@ -14,10 +14,24 @@
 %   the footer, along with a grey "DRAFT" in the margin. Note: this only
 %   works with latex, not pdflatex
 
-
+%%%% LATEX STUFF %%%
 \usepackage[T2A]{fontenc} 
 \usepackage[british]{babel}
 
+\usepackage{amssymb,amsfonts,geometry,cite,enumerate,float}
+
+\usepackage{setspace} %%% for additional spacing 
+\onehalfspacing %%% <- Increase spacing for the proofread
+
+\usepackage{lipsum} %%% to generate a stub text
+
+\graphicspath{{images/}}  %% <-- where you store all your images. 
+%%%% LATEX STUFF %%%
+
+
+
+
+%%%% Thesis STUFF %%%
 \thesisauthor{\Large John Doe}
 \thesisauthorlastname{Doe}
 % \thesisauthorpreviousdegrees{Dipl. Eng.} % Optional
@@ -28,19 +42,7 @@
 
 \thesistitle{On the development of a very important stuff}
 \thesissupervisor{Prof. Woo Hoo}
-
-\usepackage{amssymb,amsfonts,geometry,cite,enumerate,float}
-\usepackage{ifpdf}
-
-\graphicspath{{images/}}  %% <-- where you store all your images. 
-
-\usepackage{lipsum} %%% to generate a stub text
-
-\usepackage{setspace} %%% for additional spacing 
-\onehalfspacing %%% <- Increase spacing for the proofread
-
-
-
+%%%% Thesis STUFF %%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -89,6 +91,16 @@
 %%%%%%%%%%%%%%%%%%%  START::: Introduction  %%%%%%%%%%%%
 \chapter{Overview}
 \lipsum[1-5]
+
+\cite{astrom2011computer,annaswamy2001adaptive,doyle1979robustnesswithobservers}
+
+\cite{hanus1992conditioning,jang2005saturation}
+
+
+\cite{mita1977zeros}
+
+
+
 
 
 
