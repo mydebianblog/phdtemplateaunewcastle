@@ -1,5 +1,5 @@
-% \documentclass[a4paper,11pt,phdthesis,twoside,oneandhalfspace]{cssethesis}  %% <-- if you want to use old-school dvips
-\documentclass[a4paper,11pt,phdthesis,twoside,oneandhalfspace,pdflatex]{cssethesis} %% <--- if youto use PDFLaTeX
+% \documentclass[a4paper,11pt,phdthesis,twoside,oneandhalfspace]{cssethesis}  %% <-- uncomment this string if you want to use old-school **dvips**
+\documentclass[a4paper,11pt,phdthesis,twoside,oneandhalfspace,pdflatex]{cssethesis} %% <--- uncomment this string if you want to use PDFLaTeX
 
 % * Include the option "pdflatex" above if you want to use pdflatex rather than dvips
 % * Include the option "oneside" if you don't want formatting for two-sided  printing.
@@ -90,16 +90,7 @@
 
 %%%%%%%%%%%%%%%%%%%  START::: Introduction  %%%%%%%%%%%%
 \chapter{Overview}
-\lipsum[1-5]
-
-\cite{astrom2011computer,annaswamy2001adaptive,doyle1979robustnesswithobservers}
-
-\cite{hanus1992conditioning,jang2005saturation}
-
-
-\cite{mita1977zeros}
-
-
+\input{thesis_overview}
 
 
 
@@ -109,7 +100,7 @@
 
 
 \begin{figure}[ht!]
-\centering\includegraphics[width=0.5\linewidth]{newcastleLogo}
+\centering\includegraphics[width=0.9\linewidth]{phd101310s}
 \caption{Principle of the Shack-Hartmann wavefront sensor.}
 \label{fig:ShackHartmannWFS}
 \end{figure}
@@ -121,6 +112,14 @@
 
 
 \backmatter % start the thesis back matter
+
+
+
+\chapter{Last Thing} % Appendices after the \backmatter command do not
+						% get a letter
+This sort of appendix has no letter. 
+
+
 
 \pagestyle{plain}
 
