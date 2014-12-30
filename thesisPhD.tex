@@ -1,5 +1,5 @@
-% \documentclass[a4paper,11pt,phdthesis,twoside,oneandhalfspace]{cssethesis}  %% <-- uncomment this string if you want to use old-school **dvips**
-\documentclass[a4paper,11pt,phdthesis,twoside,oneandhalfspace,pdflatex]{cssethesis} %% <--- uncomment this string if you want to use PDFLaTeX
+\documentclass[a4paper,11pt,phdthesis,twoside,oneandhalfspace]{cssethesis}  %% <-- uncomment this string if you want to use old-school **dvips**
+% \documentclass[a4paper,11pt,phdthesis,twoside,oneandhalfspace,pdflatex]{cssethesis} %% <--- uncomment this string if you want to use PDFLaTeX
 
 % * Include the option "pdflatex" above if you want to use pdflatex rather than dvips
 % * Include the option "oneside" if you don't want formatting for two-sided  printing.
@@ -18,12 +18,10 @@
 \usepackage[T2A]{fontenc} 
 \usepackage[british]{babel}
 
-\usepackage{amssymb,amsfonts,geometry,cite,enumerate,float}
+\usepackage{amssymb,amsmath,amsfonts,geometry,cite,enumerate,float}
 
 \usepackage{setspace} %%% for additional spacing 
 \onehalfspacing %%% <- Increase spacing for the proofread
-
-\usepackage{lipsum} %%% to generate a stub text
 
 \graphicspath{{images/}}  %% <-- where you store all your images. 
 %%%% LATEX STUFF %%%
@@ -169,6 +167,35 @@ sleepless nights and oceans of tears:
 \ldots{} and the rest of ideas from your thesis advisor.
 
 
+\section{Mathematics}
+Any \textit{good} thesis contains at least some mathematical expressions. 
+
+In optimization we want to minimize or maximize an objective function over a set of decision variables sbject to constraints. There are different ways to format optimization problems, but the preferable way is to follow an excellent book ``Convex Optimization'' by Stephen Boyd and Lieven Vandenberghe. A general optimization problem has the form:
+
+\begin{equation*}
+ \begin{aligned}
+ & \underset{x}{\text{minimize}}
+ & & f_0(x) \\
+ & \text{subject to}
+ & & f_i(x) \leq b_i, \; i = 1, \ldots, m.
+ \end{aligned}
+\end{equation*}
+
+If we want to perform quadratic programming, the notation will be the following:
+\begin{equation}\label{eq:qpoptimisation}
+ \begin{aligned}
+ & \underset{x}{\text{minimize}}
+ & & J(x) = \frac{1}{2} \mathbf{x}^T Q \mathbf{x} + c^T \mathbf{x} \\
+ & \text{subject to} 
+ & & A\mathbf{x} \leq \mathbf b \mbox{  (inequality constraint)} \\
+ & 
+ & &     E\mathbf{x} = \mathbf d  \mbox{  (equality constraint)}
+ \end{aligned}
+\end{equation}
+
+Eq.\ref{eq:qpoptimisation} is a rather sophisticated \LaTeX formulae. Unlike the tabular environment, in which you can specify the alignment of each column, in the aligned environment, each column (separated by \verb|&|) has a default alignment, which alternates between right and left-aligned. Therefore, all the odd columns are right-aligned and all the even columns are left-aligned.
+
+
 
 
 \section{Tables}
@@ -197,7 +224,7 @@ An example picture is in Fig.~\ref{fig:examplepic}. You may also use floating fi
 \label{fig:examplepic}
 \end{figure}
 
-Also you may consider a \verb|subfig| package for 
+Also you may consider a \verb|subfig| package if you want to put figures side-by-side and reference them separately (like Fig. 3a or Fig.3b).
 
 
 
@@ -206,6 +233,17 @@ Also you may consider a \verb|subfig| package for
 \chapter{Conclusions and Future work}\label{chap:summary}
 
 
+
+\appendix % all \chapter{..} commands after this will generate appendices
+
+\chapter{This appendix should get a letter}
+\label{app:example}
+An appendix before the backmatter gets an automatically generated letter by
+which it can be referred to. This is Appendix~\ref{app:example}.
+
+\chapter{Simulation Source Code}
+You may want to investigate the \texttt{lgrind} program and package if you
+wish to include source code in your thesis
 
 \backmatter % start the thesis back matter - the numbering of chapters stops here.
 
