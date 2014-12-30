@@ -29,14 +29,22 @@ It goes without saying that you have to correct the title, name and other things
 Some good ideas about writing your thesis in LaTeX
 ----
 
-Well, since we are technical people, it goes without arguing that the thesis is going to be written in LaTeX, and not in that dumbed-down pointy-clicky behemoth for office plankton called MS Word/OpenOffice. The fact is: Word/Openoffice is useful for small, insignificant, unstructured and unimportant documents. LaTeX, on the other hand, is a powerful programming language for technical people and their complex, well-structured, math-ridden and picture-rich documents.
+It goes without arguing that the Ph.D. thesis in hard science *must* be written in LaTeX, and not in that dumbed-down pointy-clicky behemoth MS Word/OpenOffice for office plankton. 
+
+The fact is: Word/Openoffice is useful for small, insignificant, unstructured and unimportant documents. LaTeX, on the other hand, is a powerful programming language for technical people and their complex, well-structured, math-ridden and picture-rich documents.
 
 The following tips and tricks can (and will!) save you countless sleepless nights and oceans of tears:
 
- - separate each chapter of your thesis in a separate file, and then use \input{myfile} command to link then in a master document _thesisPhD.tex_
+ - separate each chapter of your thesis in its own file, and then use \input{myfile} command to link then in a master document _thesisPhD.tex_
  - put pictures in a separate subdirectory/subfolder, preferable splitting them chapter-wise;
- - pick up either dvips or pdflatex, and don't mix them!
- - use **bibtex** or **natbib** for all your citations, it will save you countless buckets of tears;
+ - pick up [either dvips or pdflatex](http://www.math.northwestern.edu/comp-help/including_graphics.html), and [don't mix them](http://homepages.physik.uni-muenchen.de/~Otto.Schaile/howtos/h_pdflatex.html)! The difference:
+      - use **dvips** if you have a lot of vector figures (from Gnuplot, for example) and vector graphics (in EPS format). You can always convert them to PDF using a command:
+> epstopdf foo.ps
+      - use **pdflatex** in all other cases (if you don't need to convert your work to rtf/doc, or you don't know what EPS is).
+ - use **bibtex** or **natbib** for all your citations, it will save you countless buckets of tears
+ - use the \label command in LaTeX wisely:
+      - give names to different items with appropriate prefixes, e.g., \label{eq:maxwell} is a better reference to the Maxwell equations than \label{123}
+      - use a colon (:) for references in chapters and sections, like \label{chap:intro:sec:review}
  - use version control system (Subversion/Mercurial/Git/whatever - they are FREE!) with LaTeX to:
       - be able to roll back any change or recover a section/chapter/paragraph at your advisor's second thought (aka "you know, a month ago we had a section here that it looked really nice...")
       - to backup your whole thesis (especially true with distributed version control systems like Mercurial or Git) and sync your work between home/uni;

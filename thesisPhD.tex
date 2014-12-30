@@ -99,31 +99,53 @@
 
 \section{Some good ideas about writing your thesis in LaTeX}
 
-Well, since we are technical people, it goes without arguing that
-the thesis is going to be written in LaTeX, and not in that
-dumbed-down pointy-clicky behemoth for office plankton called MS
-Word/OpenOffice. The fact is: Word/Openoffice is useful for small,
-insignificant, unstructured and unimportant documents. LaTeX, on
-the other hand, is a powerful programming language for technical
-people and their complex, well-structured, math-ridden and
-picture-rich documents.
+It goes without arguing that the Ph.D.~thesis in hard science
+\emph{must} be written in LaTeX, and not in that dumbed-down
+pointy-clicky behemoth MS Word/OpenOffice for office plankton.
+
+The fact is: Word/Openoffice is useful for small, insignificant,
+unstructured and unimportant documents. LaTeX, on the other hand,
+is a powerful programming language for technical people and their
+complex, well-structured, math-ridden and picture-rich documents.
 
 The following tips and tricks can (and will!) save you countless
 sleepless nights and oceans of tears:
 
 \begin{itemize}
 \item
-  separate each chapter of your thesis in a separate file, and then
-  use \verb+\input{myfile}+ command to link then in a master document
+  separate each chapter of your thesis in its own file, and then use
+  \verb|\input{myfile}| command to link then in a master document
   \emph{thesisPhD.tex}
 \item
   put pictures in a separate subdirectory/subfolder, preferable
   splitting them chapter-wise;
 \item
-  pick up either dvips or pdflatex, and don't mix them!
+  pick up either dvips or pdflatex,
+  and don't mix them!
+  The difference:
+  \begin{itemize}
+  \item
+    use \textbf{dvips} if you have a lot of vector figures (from
+    Gnuplot, for example) and vector graphics (in EPS format). You can
+    always convert them to PDF using a command: \verb|epstopdf  foo.ps|
+  \item
+    use \textbf{pdflatex} in all other cases (if you don't need to
+    convert your work to rtf/doc, or you don't know what EPS is).
+  \end{itemize}
 \item
   use \textbf{bibtex} or \textbf{natbib} for all your citations, it
-  will save you countless buckets of tears;
+  will save you countless buckets of tears
+\item
+  use the \verb|\label| command in LaTeX wisely:
+  \begin{itemize}
+  \item
+    give names to different items with appropriate prefixes, e.g.,
+    \verb|\label{eq:maxwell}| is a better reference to the Maxwell equations
+    than \verb|\label{123}|
+  \item
+    use a colon (:) for references in chapters and sections, like
+    \verb|\label{chap:intro:sec:review}|
+  \end{itemize}
 \item
   use version control system (Subversion/Mercurial/Git/whatever -
   they are FREE!) with LaTeX to:
@@ -165,11 +187,19 @@ An example of a simple table is provided below in Table~\ref{tab:example}. You m
 
 See Table~\ref{tab:example}.
 
+
+\section{Pictures}
+An example picture is in Fig.~\ref{fig:examplepic}. You may also use floating figures with wrap-around (use the \verb|wrapfig| package, although they often create a lot of troubles.
+
 \begin{figure}[ht!]
 \centering\includegraphics[width=0.9\linewidth]{phd101310s}
-\caption{Principle of the Shack-Hartmann wavefront sensor.}
-\label{fig:ShackHartmannWFS}
+\caption{An example picture.}
+\label{fig:examplepic}
 \end{figure}
+
+Also you may consider a \verb|subfig| package for 
+
+
 
 
 
