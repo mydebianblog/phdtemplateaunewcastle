@@ -96,8 +96,74 @@
 
 
 \chapter{Introduction}
-\lipsum[6-14]
 
+\section{Some good ideas about writing your thesis in LaTeX}
+
+Well, since we are technical people, it goes without arguing that
+the thesis is going to be written in LaTeX, and not in that
+dumbed-down pointy-clicky behemoth for office plankton called MS
+Word/OpenOffice. The fact is: Word/Openoffice is useful for small,
+insignificant, unstructured and unimportant documents. LaTeX, on
+the other hand, is a powerful programming language for technical
+people and their complex, well-structured, math-ridden and
+picture-rich documents.
+
+The following tips and tricks can (and will!) save you countless
+sleepless nights and oceans of tears:
+
+\begin{itemize}
+\item
+  separate each chapter of your thesis in a separate file, and then
+  use \verb+\input{myfile}+ command to link then in a master document
+  \emph{thesisPhD.tex}
+\item
+  put pictures in a separate subdirectory/subfolder, preferable
+  splitting them chapter-wise;
+\item
+  pick up either dvips or pdflatex, and don't mix them!
+\item
+  use \textbf{bibtex} or \textbf{natbib} for all your citations, it
+  will save you countless buckets of tears;
+\item
+  use version control system (Subversion/Mercurial/Git/whatever -
+  they are FREE!) with LaTeX to:
+  \begin{itemize}
+  \item
+    be able to roll back any change or recover a
+    section/chapter/paragraph at your advisor's second thought (aka
+    ``you know, a month ago we had a section here that it looked really nice\ldots{}'')
+  \item
+    to backup your whole thesis (especially true with distributed
+    version control systems like Mercurial or Git) and sync your work
+    between home/uni;
+  \item
+    to upload the code into a private repository on the Web (yet
+    another backup).
+  \end{itemize}
+\item
+  use bug/issues tracking capabilities in GitHub.com or bitbucket.com
+  to flag the areas to discuss / improve.
+\end{itemize}
+\ldots{} and the rest of ideas from your thesis advisor.
+
+
+
+
+\section{Tables}
+An example of a simple table is provided below in Table~\ref{tab:example}. You may use \verb+booktabs+ package for more advanced/beatiful tables.
+
+\begin{table}[ht]
+	\begin{center}
+	\begin{tabular}{lcr}
+	23121 & 1212 & 232 \\ \hline  
+	cat & frog & dog
+	\end{tabular}
+	\end{center}
+\caption{An example of a table}
+\label{tab:example}
+\end{table}
+
+See Table~\ref{tab:example}.
 
 \begin{figure}[ht!]
 \centering\includegraphics[width=0.9\linewidth]{phd101310s}
@@ -108,15 +174,14 @@
 
 
 \chapter{Conclusions and Future work}\label{chap:summary}
-\lipsum[16-24]
-
-
-\backmatter % start the thesis back matter
 
 
 
-\chapter{Last Thing} % Appendices after the \backmatter command do not
-						% get a letter
+\backmatter % start the thesis back matter - the numbering of chapters stops here.
+
+
+
+\chapter{Last Thing} % Appendices after the \backmatter command do not  get a letter
 This sort of appendix has no letter. 
 
 
